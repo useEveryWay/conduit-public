@@ -10,7 +10,7 @@ loadRuntimeEnv([
   fileURLToPath(new URL(".env", root)),
 ]);
 process.env.EVERYWAY_PROFILE_STORE ??= fileURLToPath(new URL(".local/profiles.json", root));
-configureSponsorBudget({
+configureSponsorBudget(process.env.SPONSOR_BUDGET_DISABLED === "1" ? null : {
   path: process.env.SPONSOR_BUDGET_PATH ?? fileURLToPath(new URL(".local/sponsor-budget.json", root)),
   maxCallsPerDay: Number(process.env.SPONSOR_MAX_CALLS_PER_DAY ?? 60),
   maxCallsPerMinute: Number(process.env.SPONSOR_MAX_CALLS_PER_MINUTE ?? 8),

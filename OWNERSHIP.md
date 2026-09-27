@@ -1,5 +1,5 @@
-# conduit ownership
+# Conduit ownership
 
-Wave 0.2 replaces the partial wave0.1 freeze in `contracts/` and `docs/`. `README.md` is unchanged. No ingress server was added.
+Conduit owns HTTP and WebSocket transport, world ingestion, route sessions, profile intake, and optional sponsor adapters. It coordinates Atlas world state and Enigma routing.
 
-Conduit owns transport later. It does not own a second copy of these contracts. Wave 1 integration must not edit `contracts/` or `docs/`.
+`contracts/` is the wire contract authority. The Wave 0.2 documents in `docs/` record the original contract freeze. They are historical planning records, not current implementation status.

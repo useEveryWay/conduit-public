@@ -6,6 +6,11 @@ want to use. Credentials stay on your computer and are ignored by Git.
 and this repository's local `.env`. Optional sponsors remain disabled until
 configured.
 
+For a demo without the local sponsor call caps, set `SPONSOR_BUDGET_DISABLED=1` in the
+local `everyway/.env` and restart Conduit. This removes the shared sponsor budget's daily and
+per-minute call caps for Gemini, Grok, ElevenLabs, and Backboard; provider quotas still apply. Set it back to `0` to
+restore `SPONSOR_MAX_CALLS_PER_DAY` and `SPONSOR_MAX_CALLS_PER_MINUTE`.
+
 From this directory, run `npm install` and `npm run demo:start`. The EveryWay
 web app connects through `NEXT_PUBLIC_CONDUIT_ORIGIN` in the sibling
 `everyway/.env`. Keep the module repositories in sibling directories named
