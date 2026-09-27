@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "live-publish.schema.json",
+  "title": "LivePublish",
+  "description": "An applied revision publishes the world, then the demo-main step-free route. The client does not call POST /v1/routes to learn it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "when",
+    "publish",
+    "clientRecomputes",
+    "clientPostsRoutesToLearnUpdate"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "when": { "const": "applied-revision-changes" },
+    "publish": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "routeSessionId"],
+        "properties": {
+          "type": { "enum": ["world.state.updated", "route.updated"] },
+          "routeSessionId": { "type": ["string", "null"] },
+          "preset": { "const": "step-free" }
+        }
+      }
+    },
+    "clientRecomputes": { "const": false },
+    "clientPostsRoutesToLearnUpdate": { "const": false }
+  }
+}

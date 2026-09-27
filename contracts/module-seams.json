@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "mqttAdopted": false,
+  "seams": [
+    {
+      "owner": "beacon",
+      "name": "emitDeviceReading",
+      "input": "device-reading",
+      "output": "device-reading"
+    },
+    {
+      "owner": "conduit",
+      "name": "acceptDeviceReading",
+      "input": "device-reading",
+      "output": "observation"
+    },
+    {
+      "owner": "atlas",
+      "name": "applyObservation",
+      "input": "observation",
+      "output": "world-state"
+    },
+    {
+      "owner": "atlas",
+      "name": "getGraph",
+      "input": "venueId",
+      "output": "venue"
+    },
+    {
+      "owner": "atlas",
+      "name": "getWorld",
+      "input": "venueId",
+      "output": "world-state"
+    },
+    {
+      "owner": "enigma",
+      "name": "computeRoute",
+      "input": "route-request+world-state",
+      "output": "route-response"
+    },
+    {
+      "owner": "conduit",
+      "name": "publishLive",
+      "input": "stream-envelope",
+      "output": "stream-envelope"
+    },
+    {
+      "owner": "conduit",
+      "name": "resetDemo",
+      "input": "venueId",
+      "output": "world-state"
+    }
+  ]
+}

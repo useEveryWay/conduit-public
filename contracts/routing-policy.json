@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "hardReject": [
+    "obstructionState == blocked",
+    "avoidStairs && stairs",
+    "maxSlope != null && slope != null && slope > maxSlope",
+    "minWidthM != null && widthM != null && widthM < minWidthM"
+  ],
+  "unknownDoesNotPass": [
+    "maxSlope != null && slope == null",
+    "minWidthM != null && widthM == null",
+    "monitored && obstructionState == unknown"
+  ],
+  "unmonitoredUnknownIsRoutable": true,
+  "edgeCost": "estimatedTimeSec * (1 + crowdWeight * crowdIndex + noiseWeight * noiseIndex)",
+  "crowdWeight": {
+    "preferLowCrowd": 0.75,
+    "otherwise": 0
+  },
+  "noiseWeight": {
+    "preferLowNoise": 0.25,
+    "otherwise": 0
+  },
+  "preferShorterDistanceAffectsCost": false,
+  "tieBreak": [
+    "routingCost",
+    "estimatedTimeSec",
+    "distanceM",
+    "edgeIds"
+  ],
+  "exclusionReasonPriority": [
+    "obstruction-blocked",
+    "stairs",
+    "slope",
+    "width",
+    "slope-unknown",
+    "width-unknown",
+    "monitored-unknown"
+  ],
+  "routingCostIsEta": false,
+  "indexRange": {
+    "min": 0,
+    "max": 1
+  }
+}

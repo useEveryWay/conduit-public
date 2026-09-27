@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "demo-session.schema.json",
+  "title": "DemoSession",
+  "description": "demo-main is one routeSessionId. Repeated create calls update that session.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "alias",
+    "routeSessionId",
+    "repeatPostReturnsSameId",
+    "resetKeepsRouteSessionId",
+    "resetClearsRouteContent",
+    "navigate",
+    "twin",
+    "originNodeId",
+    "destinationNodeId",
+    "preset",
+    "pairingUi"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "alias": { "const": "demo-main" },
+    "routeSessionId": { "const": "00000000-0000-4000-8000-0000000000d1" },
+    "repeatPostReturnsSameId": { "const": true },
+    "resetKeepsRouteSessionId": { "const": true },
+    "resetClearsRouteContent": { "const": true },
+    "navigate": { "const": "/navigate?session=demo-main" },
+    "twin": { "const": "/twin?session=demo-main" },
+    "originNodeId": { "const": "node-start" },
+    "destinationNodeId": { "const": "node-market" },
+    "preset": { "const": "step-free" },
+    "pairingUi": { "const": false }
+  }
+}

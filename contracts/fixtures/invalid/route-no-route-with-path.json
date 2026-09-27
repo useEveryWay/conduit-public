@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "requestId": "00000000-0000-4000-8000-0000000000c1",
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "status": "no_route",
+  "worldVersion": {
+    "worldEpoch": "00000000-0000-4000-8000-000000000001",
+    "graphVersion": "seaside-market-v1",
+    "revision": 0
+  },
+  "profileVersion": 1,
+  "nodeIds": [
+    "node-start",
+    "node-market"
+  ],
+  "edgeIds": [
+    "edge-stair-shortcut"
+  ],
+  "distanceM": 26,
+  "estimatedTimeSec": 26,
+  "routingCost": 26,
+  "explanation": "A no_route result must not carry a path.",
+  "exclusions": []
+}

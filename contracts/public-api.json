@@ -1,0 +1,49 @@
+{
+  "contractVersion": "wave0.2",
+  "websocket": {
+    "protocol": "ws",
+    "path": "/v1/venues/:venueId/live"
+  },
+  "http": [
+    {
+      "method": "POST",
+      "path": "/v1/device-readings",
+      "body": "device-reading",
+      "sourceType": "sensor"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/simulator/device-readings",
+      "body": "device-reading",
+      "sourceType": "simulator"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/replay/device-readings",
+      "body": "device-reading",
+      "sourceType": "replay"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/venues/:venueId/graph"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/venues/:venueId/world"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/venues/:venueId/route-sessions",
+      "body": "route-session-request"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/routes",
+      "body": "route-request"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/venues/:venueId/reset"
+    }
+  ]
+}

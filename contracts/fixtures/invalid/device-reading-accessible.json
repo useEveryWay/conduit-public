@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "deviceId": "beacon-north-ramp",
+  "bootId": "00000000-0000-4000-8000-0000000000b1",
+  "deviceSeq": 1,
+  "monotonicMs": 1000,
+  "kind": "distance",
+  "value": {
+    "distanceMm": 400,
+    "valid": true
+  },
+  "accessible": false
+}

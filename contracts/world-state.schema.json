@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "WorldState.schema.json",
+  "title": "WorldState",
+  "description": "Live edge obstruction snapshot. unknown, clear, or blocked. Missing evidence is not clear.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "venueId",
+    "worldVersion",
+    "edges"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "venueId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "worldVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worldEpoch",
+        "graphVersion",
+        "revision"
+      ],
+      "properties": {
+        "worldEpoch": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "graphVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edgeId",
+          "monitored",
+          "obstructionState",
+          "crowdIndex",
+          "noiseIndex",
+          "evidence"
+        ],
+        "properties": {
+          "edgeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "monitored": {
+            "type": "boolean"
+          },
+          "obstructionState": {
+            "enum": [
+              "unknown",
+              "clear",
+              "blocked"
+            ]
+          },
+          "crowdIndex": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "noiseIndex": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "freshness"
+            ],
+            "properties": {
+              "freshness": {
+                "enum": [
+                  "missing",
+                  "fresh",
+                  "invalid"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

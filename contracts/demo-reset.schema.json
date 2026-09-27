@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "demo-reset.schema.json",
+  "title": "DemoReset",
+  "description": "Reset changes worldEpoch, returns revision to 0, and clears applied sample identity. It does not write obstruction clear.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "http",
+    "steps",
+    "mustNot",
+    "revision",
+    "worldEpochChanges",
+    "clearsAppliedIdentity",
+    "routeSessionId",
+    "clearReading"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "http": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "path"],
+      "properties": {
+        "method": { "const": "POST" },
+        "path": { "const": "/v1/venues/:venueId/reset" }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "mustNot": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "revision": { "const": 0 },
+    "worldEpochChanges": { "const": true },
+    "clearsAppliedIdentity": { "const": true },
+    "routeSessionId": { "const": "00000000-0000-4000-8000-0000000000d1" },
+    "clearReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "deviceId", "bootId", "deviceSeq", "monotonicMs", "kind", "value"],
+      "properties": {
+        "schemaVersion": { "const": "1.0" },
+        "deviceId": { "const": "beacon-north-ramp" },
+        "bootId": { "const": "00000000-0000-4000-8000-0000000000b1" },
+        "deviceSeq": { "const": 1 },
+        "monotonicMs": { "const": 1000 },
+        "kind": { "const": "distance" },
+        "value": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["distanceMm", "valid"],
+          "properties": {
+            "distanceMm": { "const": 400 },
+            "valid": { "const": true }
+          }
+        }
+      }
+    }
+  }
+}

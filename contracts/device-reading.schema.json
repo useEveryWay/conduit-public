@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "DeviceReading.schema.json",
+  "title": "DeviceReading",
+  "description": "Raw beacon or simulator sample. Distance is millimeters. No venue edge and no UTC clock.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "deviceId",
+    "bootId",
+    "deviceSeq",
+    "monotonicMs",
+    "kind",
+    "value"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "deviceId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bootId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "deviceSeq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "monotonicMs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "kind": {
+      "const": "distance"
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distanceMm",
+        "valid"
+      ],
+      "properties": {
+        "distanceMm": {
+          "type": "number",
+          "minimum": 0
+        },
+        "valid": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

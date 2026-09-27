@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "cases": [
+    {
+      "id": "unrestricted-north-clear",
+      "preset": "fastest",
+      "obstruction": {
+        "edge-north-ramp": "clear"
+      },
+      "status": "ok",
+      "nodeIds": [
+        "node-start",
+        "node-plaza",
+        "node-market"
+      ],
+      "edgeIds": [
+        "edge-start-plaza",
+        "edge-stair-shortcut"
+      ],
+      "distanceM": 26,
+      "estimatedTimeSec": 26,
+      "routingCost": 26,
+      "exclusions": []
+    },
+    {
+      "id": "unrestricted-north-blocked",
+      "preset": "fastest",
+      "obstruction": {
+        "edge-north-ramp": "blocked"
+      },
+      "status": "ok",
+      "nodeIds": [
+        "node-start",
+        "node-plaza",
+        "node-market"
+      ],
+      "edgeIds": [
+        "edge-start-plaza",
+        "edge-stair-shortcut"
+      ],
+      "distanceM": 26,
+      "estimatedTimeSec": 26,
+      "routingCost": 26,
+      "exclusions": [
+        {
+          "edgeId": "edge-north-ramp",
+          "reason": "obstruction-blocked"
+        }
+      ]
+    },
+    {
+      "id": "step-free-north-clear",
+      "preset": "step-free",
+      "obstruction": {
+        "edge-north-ramp": "clear"
+      },
+      "status": "ok",
+      "nodeIds": [
+        "node-start",
+        "node-plaza",
+        "node-north",
+        "node-market"
+      ],
+      "edgeIds": [
+        "edge-start-plaza",
+        "edge-north-ramp",
+        "edge-north-market"
+      ],
+      "distanceM": 40,
+      "estimatedTimeSec": 42,
+      "routingCost": 42,
+      "exclusions": [
+        {
+          "edgeId": "edge-stair-shortcut",
+          "reason": "stairs"
+        }
+      ]
+    },
+    {
+      "id": "step-free-north-blocked",
+      "preset": "step-free",
+      "obstruction": {
+        "edge-north-ramp": "blocked"
+      },
+      "status": "ok",
+      "nodeIds": [
+        "node-start",
+        "node-plaza",
+        "node-east",
+        "node-market"
+      ],
+      "edgeIds": [
+        "edge-start-plaza",
+        "edge-east-path",
+        "edge-east-market"
+      ],
+      "distanceM": 70,
+      "estimatedTimeSec": 70,
+      "routingCost": 70,
+      "exclusions": [
+        {
+          "edgeId": "edge-north-ramp",
+          "reason": "obstruction-blocked"
+        },
+        {
+          "edgeId": "edge-stair-shortcut",
+          "reason": "stairs"
+        }
+      ]
+    },
+    {
+      "id": "needs-verification-steep-limit",
+      "preset": "fastest",
+      "maxSlope": 0.01,
+      "obstruction": {
+        "edge-north-ramp": "clear"
+      },
+      "status": "needs_verification",
+      "nodeIds": [],
+      "edgeIds": [],
+      "distanceM": null,
+      "estimatedTimeSec": null,
+      "routingCost": null,
+      "exclusions": [
+        {
+          "edgeId": "edge-east-path",
+          "reason": "slope"
+        },
+        {
+          "edgeId": "edge-north-ramp",
+          "reason": "slope"
+        },
+        {
+          "edgeId": "edge-stair-shortcut",
+          "reason": "slope-unknown"
+        }
+      ]
+    },
+    {
+      "id": "no-route-step-free-steep-limit",
+      "preset": "step-free",
+      "maxSlope": 0.01,
+      "obstruction": {
+        "edge-north-ramp": "clear"
+      },
+      "status": "no_route",
+      "nodeIds": [],
+      "edgeIds": [],
+      "distanceM": null,
+      "estimatedTimeSec": null,
+      "routingCost": null,
+      "exclusions": [
+        {
+          "edgeId": "edge-east-path",
+          "reason": "slope"
+        },
+        {
+          "edgeId": "edge-north-ramp",
+          "reason": "slope"
+        },
+        {
+          "edgeId": "edge-stair-shortcut",
+          "reason": "stairs"
+        }
+      ]
+    }
+  ]
+}

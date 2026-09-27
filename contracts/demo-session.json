@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "alias": "demo-main",
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "repeatPostReturnsSameId": true,
+  "resetKeepsRouteSessionId": true,
+  "resetClearsRouteContent": true,
+  "navigate": "/navigate?session=demo-main",
+  "twin": "/twin?session=demo-main",
+  "originNodeId": "node-start",
+  "destinationNodeId": "node-market",
+  "preset": "step-free",
+  "pairingUi": false
+}

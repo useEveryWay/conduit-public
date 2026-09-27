@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "StreamEnvelope.schema.json",
+  "title": "StreamEnvelope",
+  "description": "Single socket payload. World events use a null route session. Route events carry the session UUID.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sequence",
+    "venueId",
+    "type",
+    "worldVersion",
+    "routeSessionId",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "venueId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "enum": [
+        "world.state.updated",
+        "route.updated"
+      ]
+    },
+    "worldVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worldEpoch",
+        "graphVersion",
+        "revision"
+      ],
+      "properties": {
+        "worldEpoch": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "graphVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "routeSessionId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "const": "world.state.updated"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "routeSessionId": {
+            "const": null
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "const": "route.updated"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "routeSessionId": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          }
+        }
+      }
+    }
+  ]
+}

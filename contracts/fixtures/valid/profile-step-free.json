@@ -1,0 +1,23 @@
+{
+  "profileVersion": 1,
+  "requirements": {
+    "avoidStairs": true,
+    "maxSlope": null,
+    "minWidthM": null
+  },
+  "preferences": {
+    "preferLowCrowd": false,
+    "preferLowNoise": false,
+    "preferShorterDistance": false
+  },
+  "context": {
+    "carryingBulkyObject": false,
+    "carryingHeavyLoad": false
+  },
+  "presentation": {
+    "audioGuidance": true,
+    "visualGuidance": true,
+    "highContrast": false,
+    "language": "en"
+  }
+}

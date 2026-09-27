@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "http": {
+    "method": "POST",
+    "path": "/v1/venues/:venueId/reset"
+  },
+  "steps": [
+    "reset-atlas-fixture-new-world-epoch",
+    "reset-demo-route-session",
+    "reset-simulator-boot-identity",
+    "ingress-simulated-clear-device-reading",
+    "wait-until-backend-current"
+  ],
+  "mustNot": [
+    "set-obstruction-clear-directly"
+  ],
+  "revision": 0,
+  "worldEpochChanges": true,
+  "clearsAppliedIdentity": true,
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "clearReading": {
+    "schemaVersion": "1.0",
+    "deviceId": "beacon-north-ramp",
+    "bootId": "00000000-0000-4000-8000-0000000000b1",
+    "deviceSeq": 1,
+    "monotonicMs": 1000,
+    "kind": "distance",
+    "value": {
+      "distanceMm": 400,
+      "valid": true
+    }
+  }
+}

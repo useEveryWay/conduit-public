@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0",
+  "venueId": "seaside-market",
+  "graphVersion": "seaside-market-v1",
+  "worldEpoch": "00000000-0000-4000-8000-000000000001",
+  "revision": 0,
+  "nodes": [
+    {
+      "nodeId": "node-start"
+    },
+    {
+      "nodeId": "node-plaza"
+    },
+    {
+      "nodeId": "node-north"
+    },
+    {
+      "nodeId": "node-east"
+    },
+    {
+      "nodeId": "node-market"
+    }
+  ],
+  "edges": [
+    {
+      "edgeId": "edge-start-plaza",
+      "fromNodeId": "node-start",
+      "toNodeId": "node-plaza",
+      "distanceM": 10,
+      "estimatedTimeSec": 10,
+      "stairs": false,
+      "slope": 0,
+      "widthM": 2.0,
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-north-ramp",
+      "fromNodeId": "node-plaza",
+      "toNodeId": "node-north",
+      "distanceM": 12,
+      "estimatedTimeSec": 14,
+      "stairs": false,
+      "slope": 0.05,
+      "widthM": 1.4,
+      "monitored": true,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-north-market",
+      "fromNodeId": "node-north",
+      "toNodeId": "node-market",
+      "distanceM": 18,
+      "estimatedTimeSec": 18,
+      "stairs": false,
+      "slope": 0,
+      "widthM": 1.6,
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-east-path",
+      "fromNodeId": "node-plaza",
+      "toNodeId": "node-east",
+      "distanceM": 25,
+      "estimatedTimeSec": 25,
+      "stairs": false,
+      "slope": 0.02,
+      "widthM": 1.8,
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-east-market",
+      "fromNodeId": "node-east",
+      "toNodeId": "node-market",
+      "distanceM": 35,
+      "estimatedTimeSec": 35,
+      "stairs": false,
+      "slope": 0,
+      "widthM": 1.8,
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-stair-shortcut",
+      "fromNodeId": "node-plaza",
+      "toNodeId": "node-market",
+      "distanceM": 16,
+      "estimatedTimeSec": 16,
+      "stairs": true,
+      "slope": null,
+      "widthM": 1.4,
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    }
+  ],
+  "obstructionProjection": {
+    "policy": "synthetic-demo",
+    "blockedWhenValidDistanceMmAtMost": 150
+  }
+}

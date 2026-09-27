@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "afterClear": {
+    "world": {
+      "type": "world.state.updated",
+      "routeSessionId": null,
+      "revision": 1,
+      "obstructionState": "clear"
+    },
+    "route": {
+      "type": "route.updated",
+      "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+      "edgeIds": ["edge-start-plaza", "edge-north-ramp", "edge-north-market"]
+    }
+  },
+  "afterBlocked": {
+    "world": {
+      "type": "world.state.updated",
+      "routeSessionId": null,
+      "revision": 2,
+      "obstructionState": "blocked"
+    },
+    "route": {
+      "type": "route.updated",
+      "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+      "edgeIds": ["edge-start-plaza", "edge-east-path", "edge-east-market"]
+    }
+  }
+}

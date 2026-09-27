@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0",
+  "steps": [
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b1",
+        "deviceSeq": 1,
+        "monotonicMs": 1000,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 400,
+          "valid": true
+        }
+      },
+      "applied": true,
+      "obstructionState": "clear",
+      "freshness": "fresh",
+      "revision": 1
+    },
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b1",
+        "deviceSeq": 1,
+        "monotonicMs": 1000,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 400,
+          "valid": true
+        }
+      },
+      "applied": false,
+      "obstructionState": "clear",
+      "freshness": "fresh",
+      "revision": 1
+    },
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b1",
+        "deviceSeq": 2,
+        "monotonicMs": 2000,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 84,
+          "valid": true
+        }
+      },
+      "applied": true,
+      "obstructionState": "blocked",
+      "freshness": "fresh",
+      "revision": 2
+    },
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b1",
+        "deviceSeq": 1,
+        "monotonicMs": 1000,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 400,
+          "valid": true
+        }
+      },
+      "applied": false,
+      "obstructionState": "blocked",
+      "freshness": "fresh",
+      "revision": 2
+    },
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b1",
+        "deviceSeq": 3,
+        "monotonicMs": 3000,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 10,
+          "valid": false
+        }
+      },
+      "applied": true,
+      "obstructionState": "blocked",
+      "freshness": "invalid",
+      "revision": 3
+    },
+    {
+      "reading": {
+        "schemaVersion": "1.0",
+        "deviceId": "beacon-north-ramp",
+        "bootId": "00000000-0000-4000-8000-0000000000b2",
+        "deviceSeq": 1,
+        "monotonicMs": 100,
+        "kind": "distance",
+        "value": {
+          "distanceMm": 400,
+          "valid": true
+        }
+      },
+      "applied": true,
+      "obstructionState": "clear",
+      "freshness": "fresh",
+      "revision": 4
+    }
+  ]
+}

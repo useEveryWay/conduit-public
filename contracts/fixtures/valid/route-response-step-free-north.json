@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "requestId": "00000000-0000-4000-8000-0000000000c1",
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "status": "ok",
+  "worldVersion": {
+    "worldEpoch": "00000000-0000-4000-8000-000000000001",
+    "graphVersion": "seaside-market-v1",
+    "revision": 1
+  },
+  "profileVersion": 1,
+  "nodeIds": [
+    "node-start",
+    "node-plaza",
+    "node-north",
+    "node-market"
+  ],
+  "edgeIds": [
+    "edge-start-plaza",
+    "edge-north-ramp",
+    "edge-north-market"
+  ],
+  "distanceM": 40,
+  "estimatedTimeSec": 42,
+  "routingCost": 42,
+  "explanation": "Step-free fixture route uses the North Ramp while it is clear. routingCost is not ETA.",
+  "exclusions": [
+    {
+      "edgeId": "edge-stair-shortcut",
+      "reason": "stairs"
+    }
+  ]
+}

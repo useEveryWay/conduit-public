@@ -1,0 +1,13 @@
+{
+  "mobility": {
+    "avoidStairs": true,
+    "maxSlope": 0.08,
+    "minPathWidthM": 1.2
+  },
+  "environment": {
+    "preferLowCrowd": true
+  },
+  "context": {
+    "carryingBulkyObject": true
+  }
+}

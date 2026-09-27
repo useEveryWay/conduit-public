@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0",
+  "presets": {
+    "fastest": {
+      "profileVersion": 1,
+      "requirements": {
+        "avoidStairs": false,
+        "maxSlope": null,
+        "minWidthM": null
+      },
+      "preferences": {
+        "preferLowCrowd": false,
+        "preferLowNoise": false,
+        "preferShorterDistance": false
+      },
+      "context": {
+        "carryingBulkyObject": false,
+        "carryingHeavyLoad": false
+      },
+      "presentation": {
+        "audioGuidance": true,
+        "visualGuidance": true,
+        "highContrast": false,
+        "language": "en"
+      }
+    },
+    "step-free": {
+      "profileVersion": 1,
+      "requirements": {
+        "avoidStairs": true,
+        "maxSlope": null,
+        "minWidthM": null
+      },
+      "preferences": {
+        "preferLowCrowd": false,
+        "preferLowNoise": false,
+        "preferShorterDistance": false
+      },
+      "context": {
+        "carryingBulkyObject": false,
+        "carryingHeavyLoad": false
+      },
+      "presentation": {
+        "audioGuidance": true,
+        "visualGuidance": true,
+        "highContrast": false,
+        "language": "en"
+      }
+    },
+    "carrying-equipment": {
+      "profileVersion": 1,
+      "requirements": {
+        "avoidStairs": true,
+        "maxSlope": null,
+        "minWidthM": null
+      },
+      "preferences": {
+        "preferLowCrowd": true,
+        "preferLowNoise": false,
+        "preferShorterDistance": false
+      },
+      "context": {
+        "carryingBulkyObject": true,
+        "carryingHeavyLoad": false
+      },
+      "presentation": {
+        "audioGuidance": true,
+        "visualGuidance": true,
+        "highContrast": false,
+        "language": "en"
+      }
+    },
+    "quieter": {
+      "profileVersion": 1,
+      "requirements": {
+        "avoidStairs": false,
+        "maxSlope": null,
+        "minWidthM": null
+      },
+      "preferences": {
+        "preferLowCrowd": true,
+        "preferLowNoise": true,
+        "preferShorterDistance": false
+      },
+      "context": {
+        "carryingBulkyObject": false,
+        "carryingHeavyLoad": false
+      },
+      "presentation": {
+        "audioGuidance": true,
+        "visualGuidance": true,
+        "highContrast": false,
+        "language": "en"
+      }
+    }
+  }
+}

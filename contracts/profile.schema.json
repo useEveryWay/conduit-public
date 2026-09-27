@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Profile.schema.json",
+  "title": "Profile",
+  "description": "Single nested profile. Presets use this object and do not define another schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profileVersion",
+    "requirements",
+    "preferences",
+    "context",
+    "presentation"
+  ],
+  "properties": {
+    "profileVersion": {
+      "const": 1
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "avoidStairs",
+        "maxSlope",
+        "minWidthM"
+      ],
+      "properties": {
+        "avoidStairs": {
+          "type": "boolean"
+        },
+        "maxSlope": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "minWidthM": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preferLowCrowd",
+        "preferLowNoise",
+        "preferShorterDistance"
+      ],
+      "properties": {
+        "preferLowCrowd": {
+          "type": "boolean"
+        },
+        "preferLowNoise": {
+          "type": "boolean"
+        },
+        "preferShorterDistance": {
+          "type": "boolean"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carryingBulkyObject",
+        "carryingHeavyLoad"
+      ],
+      "properties": {
+        "carryingBulkyObject": {
+          "type": "boolean"
+        },
+        "carryingHeavyLoad": {
+          "type": "boolean"
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audioGuidance",
+        "visualGuidance",
+        "highContrast",
+        "language"
+      ],
+      "properties": {
+        "audioGuidance": {
+          "type": "boolean"
+        },
+        "visualGuidance": {
+          "type": "boolean"
+        },
+        "highContrast": {
+          "type": "boolean"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    }
+  }
+}

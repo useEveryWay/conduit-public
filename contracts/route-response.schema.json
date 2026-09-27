@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RouteResponse.schema.json",
+  "title": "RouteResponse",
+  "description": "distanceM and estimatedTimeSec are modeled fixture totals. routingCost is the weighted soft cost and is not ETA.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "requestId",
+    "routeSessionId",
+    "status",
+    "worldVersion",
+    "profileVersion",
+    "nodeIds",
+    "edgeIds",
+    "distanceM",
+    "estimatedTimeSec",
+    "routingCost",
+    "explanation",
+    "exclusions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "routeSessionId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "needs_verification",
+        "no_route"
+      ]
+    },
+    "worldVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "worldEpoch",
+        "graphVersion",
+        "revision"
+      ],
+      "properties": {
+        "worldEpoch": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "graphVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "profileVersion": {
+      "const": 1
+    },
+    "nodeIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "edgeIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "distanceM": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "estimatedTimeSec": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "routingCost": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edgeId",
+          "reason"
+        ],
+        "properties": {
+          "edgeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "enum": [
+              "obstruction-blocked",
+              "stairs",
+              "slope",
+              "slope-unknown",
+              "width",
+              "width-unknown",
+              "monitored-unknown"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "const": "ok"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "nodeIds": {
+            "minItems": 2
+          },
+          "edgeIds": {
+            "minItems": 1
+          },
+          "distanceM": {
+            "type": "number"
+          },
+          "estimatedTimeSec": {
+            "type": "number"
+          },
+          "routingCost": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "needs_verification",
+              "no_route"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "nodeIds": {
+            "maxItems": 0
+          },
+          "edgeIds": {
+            "maxItems": 0
+          },
+          "distanceM": {
+            "const": null
+          },
+          "estimatedTimeSec": {
+            "const": null
+          },
+          "routingCost": {
+            "const": null
+          }
+        }
+      }
+    }
+  ]
+}

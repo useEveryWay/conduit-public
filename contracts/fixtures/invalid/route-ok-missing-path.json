@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "requestId": "00000000-0000-4000-8000-0000000000c1",
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "status": "ok",
+  "worldVersion": {
+    "worldEpoch": "00000000-0000-4000-8000-000000000001",
+    "graphVersion": "seaside-market-v1",
+    "revision": 1
+  },
+  "profileVersion": 1,
+  "nodeIds": [],
+  "edgeIds": [],
+  "distanceM": null,
+  "estimatedTimeSec": null,
+  "routingCost": null,
+  "explanation": "Missing path must fail.",
+  "exclusions": []
+}

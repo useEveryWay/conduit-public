@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0",
+  "cases": [
+    {
+      "fixture": "valid/venue-seaside-market-v1.json",
+      "schema": "venue.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/device-reading-clear.json",
+      "schema": "device-reading.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/device-reading-blocked.json",
+      "schema": "device-reading.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/observation-simulator-clear.json",
+      "schema": "observation.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/world-initial.json",
+      "schema": "world-state.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/world-north-clear.json",
+      "schema": "world-state.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/world-north-blocked.json",
+      "schema": "world-state.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/profile-step-free.json",
+      "schema": "profile.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-request-step-free.json",
+      "schema": "route-request.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-response-unrestricted.json",
+      "schema": "route-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-response-step-free-north.json",
+      "schema": "route-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-response-step-free-east.json",
+      "schema": "route-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-response-needs-verification.json",
+      "schema": "route-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-response-no-route.json",
+      "schema": "route-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-session-request.json",
+      "schema": "route-session-request.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/route-session-response.json",
+      "schema": "route-session-response.schema.json",
+      "expect": "pass"
+    },
+    {
+      "fixture": "valid/stream-world.json",
+      "schema": "stream-envelope.schema.json",
+      "expect": "pass",
+      "payloadSchema": "world-state.schema.json"
+    },
+    {
+      "fixture": "valid/stream-route.json",
+      "schema": "stream-envelope.schema.json",
+      "expect": "pass",
+      "payloadSchema": "route-response.schema.json"
+    },
+    {
+      "fixture": "invalid/device-reading-distance-cm.json",
+      "schema": "device-reading.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/device-reading-edge-id.json",
+      "schema": "device-reading.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/device-reading-accessible.json",
+      "schema": "device-reading.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/observation-distance-cm.json",
+      "schema": "observation.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/world-boolean.json",
+      "schema": "world-state.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/world-confidence.json",
+      "schema": "world-state.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/profile-old-nested.json",
+      "schema": "profile.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/profile-flat.json",
+      "schema": "profile.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/route-ok-missing-path.json",
+      "schema": "route-response.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/route-no-route-with-path.json",
+      "schema": "route-response.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/stream-world-with-session.json",
+      "schema": "stream-envelope.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "invalid/venue-extra-node.json",
+      "schema": "venue.schema.json",
+      "expect": "fail"
+    },
+    {
+      "fixture": "valid/presets.json",
+      "expect": "semantic"
+    },
+    {
+      "fixture": "valid/expected-routes.json",
+      "expect": "semantic"
+    },
+    {
+      "fixture": "valid/projection-cases.json",
+      "expect": "semantic"
+    },
+    {
+      "fixture": "valid/revision-publish.json",
+      "expect": "semantic"
+    }
+  ]
+}

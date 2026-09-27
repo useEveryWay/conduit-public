@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RouteSessionRequest.schema.json",
+  "title": "RouteSessionRequest",
+  "description": "Create or update the venue session. alias demo-main is the only hackathon alias.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "venueId",
+    "alias",
+    "originNodeId",
+    "destinationNodeId",
+    "profile"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "venueId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alias": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "demo-main",
+        null
+      ]
+    },
+    "originNodeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "destinationNodeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profileVersion",
+        "requirements",
+        "preferences",
+        "context",
+        "presentation"
+      ],
+      "properties": {
+        "profileVersion": {
+          "const": 1
+        },
+        "requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "avoidStairs",
+            "maxSlope",
+            "minWidthM"
+          ],
+          "properties": {
+            "avoidStairs": {
+              "type": "boolean"
+            },
+            "maxSlope": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "minWidthM": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "preferences": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preferLowCrowd",
+            "preferLowNoise",
+            "preferShorterDistance"
+          ],
+          "properties": {
+            "preferLowCrowd": {
+              "type": "boolean"
+            },
+            "preferLowNoise": {
+              "type": "boolean"
+            },
+            "preferShorterDistance": {
+              "type": "boolean"
+            }
+          }
+        },
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "carryingBulkyObject",
+            "carryingHeavyLoad"
+          ],
+          "properties": {
+            "carryingBulkyObject": {
+              "type": "boolean"
+            },
+            "carryingHeavyLoad": {
+              "type": "boolean"
+            }
+          }
+        },
+        "presentation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "audioGuidance",
+            "visualGuidance",
+            "highContrast",
+            "language"
+          ],
+          "properties": {
+            "audioGuidance": {
+              "type": "boolean"
+            },
+            "visualGuidance": {
+              "type": "boolean"
+            },
+            "highContrast": {
+              "type": "boolean"
+            },
+            "language": {
+              "type": "string",
+              "minLength": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}

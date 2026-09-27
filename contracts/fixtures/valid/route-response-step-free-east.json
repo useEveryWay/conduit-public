@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0",
+  "requestId": "00000000-0000-4000-8000-0000000000c1",
+  "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+  "status": "ok",
+  "worldVersion": {
+    "worldEpoch": "00000000-0000-4000-8000-000000000001",
+    "graphVersion": "seaside-market-v1",
+    "revision": 2
+  },
+  "profileVersion": 1,
+  "nodeIds": [
+    "node-start",
+    "node-plaza",
+    "node-east",
+    "node-market"
+  ],
+  "edgeIds": [
+    "edge-start-plaza",
+    "edge-east-path",
+    "edge-east-market"
+  ],
+  "distanceM": 70,
+  "estimatedTimeSec": 70,
+  "routingCost": 70,
+  "explanation": "Step-free fixture route uses the East Path because the North Ramp is blocked. routingCost is not ETA.",
+  "exclusions": [
+    {
+      "edgeId": "edge-north-ramp",
+      "reason": "obstruction-blocked"
+    },
+    {
+      "edgeId": "edge-stair-shortcut",
+      "reason": "stairs"
+    }
+  ]
+}

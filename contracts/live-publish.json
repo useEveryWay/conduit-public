@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "when": "applied-revision-changes",
+  "publish": [
+    {
+      "type": "world.state.updated",
+      "routeSessionId": null
+    },
+    {
+      "type": "route.updated",
+      "routeSessionId": "00000000-0000-4000-8000-0000000000d1",
+      "preset": "step-free"
+    }
+  ],
+  "clientRecomputes": false,
+  "clientPostsRoutesToLearnUpdate": false
+}

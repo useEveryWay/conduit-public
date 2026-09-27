@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "VenueFixture.schema.json",
+  "title": "VenueFixture",
+  "description": "Seaside Market v1 directed fixture. Metrics are synthetic. Initial obstruction is unknown.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "venueId",
+    "graphVersion",
+    "worldEpoch",
+    "revision",
+    "nodes",
+    "edges",
+    "obstructionProjection"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "venueId": {
+      "const": "seaside-market"
+    },
+    "graphVersion": {
+      "const": "seaside-market-v1"
+    },
+    "worldEpoch": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "revision": {
+      "const": 0
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "nodeId"
+        ],
+        "properties": {
+          "nodeId": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edgeId",
+          "fromNodeId",
+          "toNodeId",
+          "distanceM",
+          "estimatedTimeSec",
+          "stairs",
+          "slope",
+          "widthM",
+          "monitored",
+          "obstructionState",
+          "crowdIndex",
+          "noiseIndex",
+          "evidence"
+        ],
+        "properties": {
+          "edgeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fromNodeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "toNodeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "distanceM": {
+            "type": "number",
+            "minimum": 0
+          },
+          "estimatedTimeSec": {
+            "type": "number",
+            "minimum": 0
+          },
+          "stairs": {
+            "type": "boolean"
+          },
+          "slope": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "widthM": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "monitored": {
+            "type": "boolean"
+          },
+          "obstructionState": {
+            "enum": [
+              "unknown",
+              "clear",
+              "blocked"
+            ]
+          },
+          "crowdIndex": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "noiseIndex": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "freshness"
+            ],
+            "properties": {
+              "freshness": {
+                "enum": [
+                  "missing",
+                  "fresh",
+                  "invalid"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "obstructionProjection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "blockedWhenValidDistanceMmAtMost"
+      ],
+      "properties": {
+        "policy": {
+          "const": "synthetic-demo"
+        },
+        "blockedWhenValidDistanceMmAtMost": {
+          "const": 150
+        }
+      }
+    }
+  }
+}

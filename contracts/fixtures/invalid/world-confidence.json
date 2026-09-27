@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "venueId": "seaside-market",
+  "worldVersion": {
+    "worldEpoch": "00000000-0000-4000-8000-000000000001",
+    "graphVersion": "seaside-market-v1",
+    "revision": 0
+  },
+  "edges": [
+    {
+      "edgeId": "edge-start-plaza",
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-north-ramp",
+      "monitored": true,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      },
+      "confidence": 0.99
+    },
+    {
+      "edgeId": "edge-north-market",
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-east-path",
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-east-market",
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    },
+    {
+      "edgeId": "edge-stair-shortcut",
+      "monitored": false,
+      "obstructionState": "unknown",
+      "crowdIndex": 0.2,
+      "noiseIndex": 0.1,
+      "evidence": {
+        "freshness": "missing"
+      }
+    }
+  ]
+}
